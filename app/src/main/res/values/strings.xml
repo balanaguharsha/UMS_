@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Testing</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string-array name="mon">
+        <item>Check_Transactions</item>
+        <item>Available_Balance</item>
+
+    </string-array>
+    <string name="errmsg">"Invalid ID or Password, Try again"</string>
+    <string name="fff">"Select one among these"</string>
+    <string name="gg">"You Haven't Borrowed any books!"</string>
+</resources>
