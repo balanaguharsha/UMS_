@@ -57,6 +57,8 @@ public class MainActivity extends Activity {
         b2=(Button)findViewById(R.id.b2);
         b3=(Button)findViewById(R.id.b3);
         b4=(Button)findViewById(R.id.b4);
+
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

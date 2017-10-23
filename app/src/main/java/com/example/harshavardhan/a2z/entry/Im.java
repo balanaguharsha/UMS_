@@ -10,6 +10,10 @@ public class Im implements Serializable {
 
     private String depts[];
     private int totalBooks,totalSections[],totalStudents;
+    public Im()
+    {
+
+    }
     public Im(int x,int z[],String p[],int a)
     {
         totalBooks=x;

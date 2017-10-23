@@ -1,4 +1,5 @@
 package com.example.harshavardhan.a2z.inputOutput;
+import com.example.harshavardhan.a2z.entry.Im;
 import com.example.harshavardhan.a2z.entry.Student;
 import java.io.*;
 /**
@@ -9,10 +10,10 @@ public class UpdateStudent {
 
     public Student[] f() throws IOException,ClassNotFoundException
     {
-        ObjectInputStream x = new ObjectInputStream(new FileInputStream("Hi"));
-        ObjectInputStream fp = new ObjectInputStream(new FileInputStream("Student"));
+        ObjectInputStream x = new ObjectInputStream(new FileInputStream("StIm"));
+        ObjectInputStream fp = new ObjectInputStream(new FileInputStream("StFile"));
 
-        Type r = (Type)x.readObject();
+        Im r = (Im)x.readObject();
         Student s[] = new Student[r.totalStudents()];
         for(int i=0;i<r.totalStudents();i++)
         {

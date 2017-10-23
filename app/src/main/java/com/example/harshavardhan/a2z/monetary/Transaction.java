@@ -2,6 +2,7 @@ package com.example.harshavardhan.a2z.monetary;
 import java.io.*;
 
 import com.example.harshavardhan.a2z.entry.Student;
+import com.example.harshavardhan.a2z.entry.Im;
 
 public class Transaction {
 public void add(double x,Student s) throws IOException,ClassNotFoundException
@@ -34,8 +35,8 @@ private void writeStudent(Student st) throws IOException,ClassNotFoundException
 	ObjectInputStream fp = new ObjectInputStream(new FileInputStream("Student"));
 	ObjectOutputStream wp = new ObjectOutputStream(new FileOutputStream("Student"));
 	
-	Type t = new Type();
-	t=(Type)x.readObject();
+	Im t = new Im();
+	t=(Im)x.readObject();
 	int max = t.totalStudents();
 	Student s[] = new Student[max];
 	for(int i=0;i<max;i++)
