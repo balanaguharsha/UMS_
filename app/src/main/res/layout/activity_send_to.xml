@@ -45,7 +45,7 @@
             android:layout_marginBottom="21dp"
             android:text="transfer" />
 
-       
+
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
