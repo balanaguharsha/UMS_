@@ -1,6 +1,5 @@
 package com.example.harshavardhan.a2z.entry;
 
-import android.os.Parcelable;
 
 import java.io.*;
 
