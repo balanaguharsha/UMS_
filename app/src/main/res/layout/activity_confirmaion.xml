@@ -42,5 +42,14 @@
             android:layout_marginTop="32dp"
             android:text="Enter" />
 
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/button5"
+            android:layout_marginBottom="65dp"
+            android:text="Button" />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
