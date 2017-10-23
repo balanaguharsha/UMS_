@@ -1,17 +1,24 @@
 package com.example.harshavardhan.a2z;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences settings = getSharedPreferences("prefs", 0);
+        boolean firstRun = settings.getBoolean("firstRun", true);
+        if ( firstRun ) {
+            Toast.makeText(getApplicationContext(),"harsha",Toast.LENGTH_SHORT).show();
+        }
         setContentView(R.layout.activity_splash);
         if(Build.VERSION.SDK_INT>=21){
             Window w=this.getWindow();

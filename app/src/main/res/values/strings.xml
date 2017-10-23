@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Testing</string>
+    <string name="app_name">A2Z</string>
     <string name="title_activity_main3">Main3Activity</string>
     <string-array name="mon">
         <item>Check_Transactions</item>
