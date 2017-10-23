@@ -10,14 +10,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.harshavardhan.a2z.inputOutput.FirstTime;
+import com.example.harshavardhan.a2z.inputOutput.UpdateIm;
 import com.example.harshavardhan.a2z.inputOutput.UpdateStudent;
 import com.example.harshavardhan.a2z.entry.Student;
+import com.example.harshavardhan.a2z.entry.Im;
 
 import java.io.*;
 
 public class login extends AppCompatActivity {
     Button b;
-    Student s[] = null;
+    Student s[];
     EditText e1,e2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +28,19 @@ public class login extends AppCompatActivity {
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
             FirstTime ft = new FirstTime();
+        UpdateIm fui = new UpdateIm();
+        Im im = new Im();
             try{
                 ft.f();
+                im=fui.f();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
+            s=new Student[im.totalStudents()];
             b=(Button)findViewById(R.id.log);
             e1=(EditText)findViewById(R.id.user);
             e2=(EditText)findViewById(R.id.pass);

@@ -9,8 +9,4 @@ public class Date
 		month=y;
 		year=z;
 	}
-	public void print()
-	{
-		System.out.print(day+"/"+month+"/"+year);
-	}
 }

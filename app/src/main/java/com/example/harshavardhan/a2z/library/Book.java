@@ -3,7 +3,7 @@ import com.example.harshavardhan.a2z.entry.*;
 
 public class Book {
 private String name,author,publications,edition,serialKey,issuedTo;
-private Date duedate;
+private Date duedate=new Date();
 public int totalBooks;
 public void set(String a, String b, String c, String d, String e,String f,int x,int y,int z,int r)
 {

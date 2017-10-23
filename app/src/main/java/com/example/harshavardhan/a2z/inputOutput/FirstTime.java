@@ -60,6 +60,8 @@ public class FirstTime implements Serializable{
         String calss[]={"CSE","ECE"};
         Im im = new Im(16,p,calss,2);
         ObjectOutputStream fp = null;
+        fp=new ObjectOutputStream(new FileOutputStream("StIm"));
+        fp.writeObject(im);
         fp=new ObjectOutputStream(new FileOutputStream("StFile"));
         fp.writeObject(s1);
         fp.writeObject(s2);
@@ -82,8 +84,6 @@ public class FirstTime implements Serializable{
         fp.writeObject(b14);
         fp.writeObject(b15);
         fp.writeObject(b16);
-        fp=new ObjectOutputStream(new FileOutputStream("StIm"));
-        fp.writeObject(im);
         fp.close();
     }
 }
