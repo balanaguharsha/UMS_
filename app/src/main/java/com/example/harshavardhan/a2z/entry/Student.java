@@ -13,7 +13,7 @@ public class Student implements Serializable
     {
 
     }
-    public Student(String x,int elect,String y,String joker,String req[],double e)
+    public Student(String x,String y,String joker,String req[],double e,int elect)
     {
         name=x;
         studentID=y;

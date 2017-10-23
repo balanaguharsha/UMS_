@@ -2,7 +2,6 @@ package com.example.harshavardhan.a2z.monetary;
 import java.io.*;
 
 import com.example.harshavardhan.a2z.entry.Student;
-import com.example.harshavardhan.a2z.inputOutput.Type;
 
 public class Transaction {
 public void add(double x,Student s) throws IOException,ClassNotFoundException
