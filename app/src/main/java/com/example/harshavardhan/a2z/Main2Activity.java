@@ -15,10 +15,10 @@ import com.example.harshavardhan.a2z.library.Lib;
 
 public class Main2Activity extends AppCompatActivity {
 
-    Button bu1,bu2;
+    Button bu1, bu2;
     UpdateBooks book = new UpdateBooks();
     Book b[];
-    Student s=new Student();
+    Student s = new Student();
 
     public Main2Activity() throws IOException, ClassNotFoundException {
     }
@@ -26,10 +26,10 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
-            ObjectInputStream fp = new ObjectInputStream(new FileInputStream("StName"));
+            ObjectInputStream fp = new ObjectInputStream(getApplicationContext().openFileInput("StName"));
             s = (Student) fp.readObject();
             fp.close();
-            b=book.f();
+            b = book.f(getApplicationContext());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -39,23 +39,20 @@ public class Main2Activity extends AppCompatActivity {
         }
 
 
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        bu1=(Button)findViewById(R.id.bu1);
-        bu2=(Button)findViewById(R.id.bu2);
+        bu1 = (Button) findViewById(R.id.bu1);
+        bu2 = (Button) findViewById(R.id.bu2);
         bu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Lib l =new Lib();
-                if( l.BooksInHand(s, b)){
-                    Toast.makeText(getApplicationContext(),R.string.gg,Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Intent inj=new Intent(getApplicationContext(),Main6Activity.class);
-                    inj.putExtra("obj",s);
-                    inj.putExtra("obj1",b);
+                Lib l = new Lib();
+                if (l.BooksInHand(s, b)) {
+                    Toast.makeText(getApplicationContext(), R.string.gg, Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent inj = new Intent(getApplicationContext(), Main6Activity.class);
+                    inj.putExtra("obj", s);
+                    inj.putExtra("obj1", b);
                     startActivity(inj);
                 }
 
@@ -64,8 +61,8 @@ public class Main2Activity extends AppCompatActivity {
         bu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inj=new Intent(getApplicationContext(),Main7Activity.class);
-                inj.putExtra("obj1",b);
+                Intent inj = new Intent(getApplicationContext(), Main7Activity.class);
+                inj.putExtra("obj1", b);
                 startActivity(inj);
             }
         });

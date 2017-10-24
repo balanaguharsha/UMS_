@@ -28,19 +28,13 @@ public class login extends AppCompatActivity {
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
             FirstTime ft = new FirstTime();
-        UpdateIm fui = new UpdateIm();
-        Im im = new Im();
             try{
-                ft.f();
-                im=fui.f();
+                ft.f(getApplicationContext());
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             }
-            s=new Student[im.totalStudents()];
             b=(Button)findViewById(R.id.log);
             e1=(EditText)findViewById(R.id.user);
             e2=(EditText)findViewById(R.id.pass);
@@ -49,7 +43,7 @@ public class login extends AppCompatActivity {
                 public void onClick(View view) {
                 UpdateStudent x=new UpdateStudent();
                 try {
-                    s=x.f();
+                    s=x.f(getApplicationContext());
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ClassNotFoundException e) {
@@ -72,7 +66,7 @@ public class login extends AppCompatActivity {
                 else {
                     Intent in = new Intent(getApplicationContext(), MainActivity.class);
                     try{
-                    ObjectOutputStream fp= new ObjectOutputStream(new FileOutputStream("StName"));
+                    ObjectOutputStream fp= new ObjectOutputStream(getApplicationContext().openFileOutput("StName",MODE_PRIVATE));
                     fp.writeObject(s[i]);
                     fp.close();
                     } catch (IOException e) {

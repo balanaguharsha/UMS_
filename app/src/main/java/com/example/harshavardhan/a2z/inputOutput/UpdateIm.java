@@ -1,5 +1,7 @@
 package com.example.harshavardhan.a2z.inputOutput;
 
+import android.content.Context;
+
 import java.io.*;
 import com.example.harshavardhan.a2z.entry.Im;
 
@@ -9,11 +11,11 @@ import com.example.harshavardhan.a2z.entry.Im;
 
 public class UpdateIm {
 
-    public Im f() throws IOException,ClassNotFoundException
+    public Im f(Context con) throws IOException,ClassNotFoundException
     {
         Im t=new Im();
 
-        ObjectInputStream fp = new ObjectInputStream(new FileInputStream("StIm"));
+        ObjectInputStream fp = new ObjectInputStream(con.openFileInput("StIm"));
 
         t=(Im)fp.readObject();
 

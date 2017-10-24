@@ -32,7 +32,7 @@ public class confirmaion extends AppCompatActivity {
            public void onClick(View view) {
                String pass=x.getText().toString();
                try{
-                   ObjectInputStream fp = new ObjectInputStream(new FileInputStream("StName"));
+                   ObjectInputStream fp = new ObjectInputStream(getApplicationContext().openFileInput("StName"));
                    s=(Student) fp.readObject();
                    fp.close();
                } catch (FileNotFoundException e) {

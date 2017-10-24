@@ -15,7 +15,7 @@ public class Main6Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main6);
         Student s=new Student();
         try {
-            ObjectInputStream fp = new ObjectInputStream(new FileInputStream("StName"));
+            ObjectInputStream fp = new ObjectInputStream(getApplicationContext().openFileInput("StName"));
             s = (Student) fp.readObject();
             fp.close();
         } catch (FileNotFoundException e) {

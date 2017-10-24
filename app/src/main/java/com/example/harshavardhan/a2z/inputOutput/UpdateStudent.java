@@ -1,4 +1,6 @@
 package com.example.harshavardhan.a2z.inputOutput;
+import android.content.Context;
+
 import com.example.harshavardhan.a2z.entry.Im;
 import com.example.harshavardhan.a2z.entry.Student;
 import java.io.*;
@@ -8,10 +10,10 @@ import java.io.*;
 
 public class UpdateStudent {
 
-    public Student[] f() throws IOException,ClassNotFoundException
+    public Student[] f(Context con) throws IOException,ClassNotFoundException
     {
-        ObjectInputStream x = new ObjectInputStream(new FileInputStream("StIm"));
-        ObjectInputStream fp = new ObjectInputStream(new FileInputStream("StFile"));
+        ObjectInputStream x = new ObjectInputStream(con.openFileInput("StIm"));
+        ObjectInputStream fp = new ObjectInputStream(con.openFileInput("StFile"));
 
         Im r = (Im)x.readObject();
         Student s[] = new Student[r.totalStudents()];

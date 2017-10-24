@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         try {
-            ObjectInputStream fp = new ObjectInputStream(new FileInputStream("StName"));
+            ObjectInputStream fp = new ObjectInputStream(getApplicationContext().openFileInput("StName"));
             s = (Student) fp.readObject();
             fp.close();
         } catch (FileNotFoundException e) {

@@ -28,7 +28,7 @@ public class common extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try{
-            b=u.f();
+            b=u.f(getApplicationContext());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

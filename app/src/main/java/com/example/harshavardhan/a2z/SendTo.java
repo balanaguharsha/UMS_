@@ -21,7 +21,7 @@ public class SendTo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try{
-            ObjectInputStream x = new ObjectInputStream(new FileInputStream("StName"));
+            ObjectInputStream x = new ObjectInputStream(getApplicationContext().openFileInput("StName"));
             s=(Student)x.readObject();
         } catch (FileNotFoundException e) {
             e.printStackTrace();

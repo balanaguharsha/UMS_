@@ -3,13 +3,15 @@ package com.example.harshavardhan.a2z.inputOutput;
 /**
  * Created by SAKSHAM on 10/23/2017.
  */
+import android.content.Context;
+
 import com.example.harshavardhan.a2z.entry.*;
 import com.example.harshavardhan.a2z.library.Book;
 
 import java.io.*;
 
 public class FirstTime implements Serializable{
-    public void f() throws FileNotFoundException,IOException {
+    public void f(Context con) throws FileNotFoundException,IOException {
         String boks[] = {"12","23","24"};
         String boks2[] = {"12","23","34"};
         Student s1 = new Student("harsha","cb.en.u4cse16207","1234harsha",boks,500,1);
@@ -60,14 +62,14 @@ public class FirstTime implements Serializable{
         String calss[]={"CSE","ECE"};
         Im im = new Im(16,p,calss,2);
         ObjectOutputStream fp = null;
-        fp=new ObjectOutputStream(new FileOutputStream("StIm"));
+        fp=new ObjectOutputStream(con.openFileOutput("StIm",Context.MODE_PRIVATE));
         fp.writeObject(im);
-        fp=new ObjectOutputStream(new FileOutputStream("StFile"));
+        fp=new ObjectOutputStream(con.openFileOutput("StFile",Context.MODE_PRIVATE));
         fp.writeObject(s1);
         fp.writeObject(s2);
-        fp = new ObjectOutputStream(new FileOutputStream("StHelp"));
+        fp = new ObjectOutputStream(con.openFileOutput("StHelp",Context.MODE_PRIVATE));
         fp.writeObject(help);
-        fp=new ObjectOutputStream(new FileOutputStream("StBooks"));
+        fp=new ObjectOutputStream(con.openFileOutput("StBooks",Context.MODE_PRIVATE));
         fp.writeObject(b1);
         fp.writeObject(b2);
         fp.writeObject(b3);

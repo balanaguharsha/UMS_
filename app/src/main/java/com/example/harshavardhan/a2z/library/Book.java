@@ -1,7 +1,9 @@
 package com.example.harshavardhan.a2z.library;
 import com.example.harshavardhan.a2z.entry.*;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable{
 private String name,author,publications,edition,serialKey,issuedTo;
 private Date duedate=new Date();
 public int totalBooks;
